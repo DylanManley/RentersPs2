@@ -14,6 +14,8 @@ public class PlayerController : MonoBehaviour
     public float standingHeight = 2;
     public KeyCode interactKey = KeyCode.E;
     public KeyCode crouchKey = KeyCode.LeftControl;
+    public bool encumbered = false;
+    private bool slowed = false;
 
     [Header("Interaction Settings")]
     public float interactDistance = 3f;
@@ -45,8 +47,26 @@ public class PlayerController : MonoBehaviour
 
     void HandleInputs()
     {
+        if (encumbered == true && slowed == false)
+        {
+            speed = speed / 2;
+            crouchSpeed = crouchSpeed / 2;
+            runSpeed = runSpeed / 2;
+            slowed = true;
+        }
+
+        if(encumbered == false && slowed == true) 
+        {
+            speed = speed * 2;
+            crouchSpeed = crouchSpeed * 2;
+            runSpeed = runSpeed * 2;
+            slowed = false;
+        }
+
+
         if (active == true)
         {
+
             // Ground check
             isGrounded = controller.isGrounded;
             if (isGrounded && velocity.y < 0)
@@ -103,6 +123,7 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         HandleInputs();
         Interact();
     }
