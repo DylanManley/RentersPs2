@@ -12,11 +12,13 @@ public class PlayerManager : MonoBehaviour
     public PlayerController Darragh;
     bool DarraghActive = false;
     [SerializeField] private GameObject DarraghWeapon;
+    private bool canPlay = false;
 
 
     [SerializeField] private Camera UIcam;
     void Update()
     {
+
         if (Input.GetKeyDown(KeyCode.Q))
         {
             
@@ -52,5 +54,6 @@ public class PlayerManager : MonoBehaviour
             DarraghActive = false;
             Darragh.Deactivate();
         }
+
     } 
 }

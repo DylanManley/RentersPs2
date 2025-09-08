@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using System.Threading;
 using UnityEngine;
+using UnityEngine.AI;
 
 public enum InteractableType
 {
@@ -17,6 +18,8 @@ public class AItriggers : MonoBehaviour
     [SerializeField] private float timeBetween;
     private GuardBehaviour aiScript;
     private Interactable interactable;
+    private NavMeshAgent agent;
+    public bool PlayerInTrigger;
 
 
     private void Start()
@@ -39,15 +42,23 @@ public class AItriggers : MonoBehaviour
 
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerStay(Collider other)
     {
+        if(other.CompareTag("Player"))
+        {
+            PlayerInTrigger = true;
+        }
+        else
+        {
+            PlayerInTrigger = false;
+        }
 
         if(other.CompareTag("NPC"))
         {
             aiScript = other.GetComponent<GuardBehaviour>();
-            if (aiScript.canInteract)
-            {
-                interactable.Interact(other.transform);
+            if (aiScript.canInteract && !PlayerInTrigger)
+            {  
+               interactable.Interact(other.transform);
             }
         }
     }
@@ -57,7 +68,12 @@ public class AItriggers : MonoBehaviour
         aiScript = other.GetComponent<GuardBehaviour>();
         aiScript.canInteract = false;
         StartCoroutine(disabledTime());
-    }
+
+        if (other.CompareTag("Player"))
+        {
+            PlayerInTrigger = false;
+        }
+    } 
 
     private IEnumerator disabledTime()
     {
