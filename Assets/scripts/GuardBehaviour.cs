@@ -49,6 +49,17 @@ public class GuardBehaviour : MonoBehaviour
                 agent.SetDestination(chaseTarget.position);
                 agent.speed = 10.0f;
 
+                if(agent.remainingDistance <= 0.5f)
+                {
+                   PlayerController caughtPlayer = chaseTarget.GetComponent<PlayerController>();
+                   caughtPlayer.isDowned = true;
+                   caughtPlayer.hidden = true;
+                    isChasing = false;
+                    WaitAtWaypoint();
+                    LookForPlayers();
+
+                }
+
                 if(agent.remainingDistance > giveUpRange)
                 {
                     isChasing = false;
@@ -58,6 +69,7 @@ public class GuardBehaviour : MonoBehaviour
                 }
             }
         }
+
 
         animator.SetBool("Walking", agent.velocity.magnitude > 0.1f && agent.velocity.magnitude < 3.6f);
         animator.SetBool("Running", agent.velocity.magnitude > 3.6f);

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerController : MonoBehaviour
+public class PlayerController : MonoBehaviour, Interactable
 {
     [Header("Movement Settings")]
     public float speed = 10;
@@ -16,6 +16,7 @@ public class PlayerController : MonoBehaviour
     public KeyCode crouchKey = KeyCode.LeftControl;
     public bool encumbered = false;
     private bool slowed = false;
+    private PlayerManager manager;
 
     [Header("Interaction Settings")]
     public float interactDistance = 3f;
@@ -38,11 +39,14 @@ public class PlayerController : MonoBehaviour
     public bool IsCrouching => isCrouching;
     public bool hidden = false;
 
+    public bool isDowned;
+
 
     private void Start()
     {
         controller = GetComponent<CharacterController>();
         animator = body.GetComponent<Animator>();
+        manager = FindObjectOfType<PlayerManager>();
     }
 
     void HandleInputs()
@@ -124,17 +128,14 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        if(isDowned && manager.canSwitch == true)
+        {
+            manager.Downed();
+            animator.SetLayerWeight(1, 1);
+            return;
+        }
         HandleInputs();
         Interact();
-
-        Ray DebugRay = new Ray(playerCamera.position, playerCamera.forward);
-        if (Physics.Raycast(DebugRay, out RaycastHit DebugHit, interactDistance))
-        {
-
-            // Draw line to hit point
-            Debug.DrawLine(DebugRay.origin, DebugHit.point, Color.green,interactDistance);
-        }
     }
 
     public void Deactivate()
@@ -161,6 +162,17 @@ public class PlayerController : MonoBehaviour
         active = true;
         body.gameObject.SetActive(false);
         icon.gameObject.SetActive(true);
+    }
+
+    public void Interact(Transform t_interactor)
+    {
+        if(isDowned)
+        {
+            isDowned = false;
+            hidden= false;
+            manager.canSwitch = true;
+            animator.SetLayerWeight(1, 0);
+        }
     }
 }
 
