@@ -112,6 +112,7 @@ public class PlayerController : MonoBehaviour
             Ray ray = new Ray(playerCamera.position, playerCamera.forward);
             if (Physics.Raycast(ray, out RaycastHit hit, interactDistance))
             {
+
                 if (hit.collider.TryGetComponent<Interactable>(out var interactable))
                 {
                     interactable.Interact(this.transform);
@@ -126,6 +127,14 @@ public class PlayerController : MonoBehaviour
 
         HandleInputs();
         Interact();
+
+        Ray DebugRay = new Ray(playerCamera.position, playerCamera.forward);
+        if (Physics.Raycast(DebugRay, out RaycastHit DebugHit, interactDistance))
+        {
+
+            // Draw line to hit point
+            Debug.DrawLine(DebugRay.origin, DebugHit.point, Color.green,interactDistance);
+        }
     }
 
     public void Deactivate()

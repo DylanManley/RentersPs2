@@ -19,6 +19,8 @@ public class GuardBehaviour : MonoBehaviour
     public bool canInteract = true;
     private Transform chaseTarget;
 
+    [SerializeField] private int giveUpRange = 10;
+
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
@@ -46,6 +48,14 @@ public class GuardBehaviour : MonoBehaviour
             {
                 agent.SetDestination(chaseTarget.position);
                 agent.speed = 10.0f;
+
+                if(agent.remainingDistance > giveUpRange)
+                {
+                    isChasing = false;
+                    WaitAtWaypoint();
+                    LookForPlayers();
+                 
+                }
             }
         }
 
