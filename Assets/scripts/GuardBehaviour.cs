@@ -67,6 +67,15 @@ public class GuardBehaviour : MonoBehaviour
                     LookForPlayers();
                  
                 }
+
+                if(agent.remainingDistance < 1.5)
+                {
+                    animator.SetBool("punch", true);
+                }
+                else
+                {
+                    animator.SetBool("punch", false);
+                }
             }
         }
 

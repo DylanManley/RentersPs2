@@ -1727,7 +1727,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 9
   canInteract: 1
-  giveUpRange: 10
+  giveUpRange: 15
 --- !u!95 &122949077
 Animator:
   serializedVersion: 4
@@ -16021,7 +16021,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 9
   canInteract: 1
-  giveUpRange: 10
+  giveUpRange: 15
 --- !u!195 &1263429178
 NavMeshAgent:
   m_ObjectHideFlags: 0
