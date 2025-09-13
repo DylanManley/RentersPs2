@@ -40,6 +40,7 @@ public class PlayerController : MonoBehaviour, Interactable
     public bool hidden = false;
 
     public bool isDowned;
+    [SerializeField] private float aboveGround = 0.5f; 
 
 
     private void Start()
@@ -130,6 +131,10 @@ public class PlayerController : MonoBehaviour, Interactable
     {
         if(isDowned && manager.canSwitch == true)
         {
+            if(isCrouching)
+            {
+                transform.position += new Vector3(0, aboveGround, 0);
+            }
             manager.Downed();
             animator.SetLayerWeight(1, 1);
             return;
@@ -168,10 +173,14 @@ public class PlayerController : MonoBehaviour, Interactable
     {
         if(isDowned)
         {
+            if (IsCrouching)
+            {
+                transform.position -= new Vector3(0, aboveGround, 0);
+            }
             isDowned = false;
             hidden= false;
             manager.canSwitch = true;
-            animator.SetLayerWeight(1, 0);
+            animator.SetLayerWeight(1, 0);            
         }
     }
 }
