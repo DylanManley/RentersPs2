@@ -11186,7 +11186,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   introCutscene: {fileID: 1601815545}
   outroCutscene: {fileID: 1669833348}
-  hasIntroCutscene: 0
+  hasIntroCutscene: 1
   hasOutroCutscene: 1
   introLength: 27
   outroLength: 10
@@ -18361,6 +18361,10 @@ PrefabInstance:
     - target: {fileID: 1601815544, guid: 711442ced801bc846aaeb04a28449fbd, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1669833348, guid: 711442ced801bc846aaeb04a28449fbd, type: 3}
+      propertyPath: m_RootOrder
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 1818171501, guid: 711442ced801bc846aaeb04a28449fbd, type: 3}
       propertyPath: isDowned
