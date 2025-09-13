@@ -11196,7 +11196,7 @@ MonoBehaviour:
   controller: {fileID: 1613631429}
   charControl: {fileID: 1613631432}
   playerManager: {fileID: 1915121072}
-  nextSceneNum: 0
+  nextSceneNum: 2
 --- !u!4 &867657889
 Transform:
   m_ObjectHideFlags: 0
