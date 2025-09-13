@@ -8,11 +8,11 @@ public class LevelExit : MonoBehaviour
     [SerializeField] private int itemsNeeded = 0;
     public int itemsCollected = 0;
     public int characterCount = 0;
+    public LevelManager manager;
 
     // Start is called before the first frame update
     void Start()
     {
-
     }
 
     private void OnTriggerEnter(Collider other)
@@ -22,9 +22,10 @@ public class LevelExit : MonoBehaviour
             characterCount++;
             if (itemCondition == true)
             {
-                if (itemsCollected >= itemsNeeded)
+                if (itemsCollected >= itemsNeeded && characterCount >= 2)
                 {
                     Debug.Log("area Finished");
+                    manager.EndLevel();
                 }
             }
         }
