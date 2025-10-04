@@ -48,6 +48,7 @@ public class PlayerController : MonoBehaviour, Interactable
     [SerializeField] private AudioClip[] downedClips;
     public AudioClip[] getUpClips;
     public AudioClip heavyClip;
+    bool downedAudioPlayed;
 
 
     private void Start()
@@ -142,12 +143,16 @@ public class PlayerController : MonoBehaviour, Interactable
             {
                 transform.position += new Vector3(0, aboveGround, 0);
             }
-            manager.Downed();
 
-            audioSource.Stop();
-            int i = Random.Range(0, downedClips.Length);
-            audioSource.clip = downedClips[i];
-            audioSource.Play();
+            if (!downedAudioPlayed)
+            {
+                audioSource.Stop();
+                int i = Random.Range(0, downedClips.Length);
+                audioSource.clip = downedClips[i];
+                audioSource.Play();
+                downedAudioPlayed = true;
+            }
+            manager.Downed();
 
             animator.SetLayerWeight(1, 1);
             return;
@@ -194,6 +199,7 @@ public class PlayerController : MonoBehaviour, Interactable
             isDowned = false;
             hidden= false;
             manager.canSwitch = true;
+            downedAudioPlayed = false;
             animator.SetLayerWeight(1, 0);
 
             //other audio
