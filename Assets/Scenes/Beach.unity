@@ -11417,7 +11417,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   introCutscene: {fileID: 1601815545}
   outroCutscene: {fileID: 1669833348}
-  hasIntroCutscene: 0
+  hasIntroCutscene: 1
   hasOutroCutscene: 1
   introLength: 33
   outroLength: 16

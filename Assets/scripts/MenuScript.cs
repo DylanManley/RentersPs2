@@ -4,6 +4,13 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 public class MenuScript : MonoBehaviour
 {
+
+    public void Start()
+    {
+        Cursor.lockState = CursorLockMode.None; 
+        Cursor.visible = true;
+    }
+
     public void StartDemo()
     {
         SceneManager.LoadScene(1);

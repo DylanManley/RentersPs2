@@ -57,36 +57,44 @@ public class PlayerManager : MonoBehaviour
 
     public void Downed()
     {
-
         if (Darragh.isDowned && Dylan.isDowned)
         {
-            SceneManager.LoadScene(4);
+            SceneManager.LoadScene(3);
+            return;
         }
-        else if (Dylan.isDowned && !Darragh.isDowned)
+
+        if (canSwitch)
+        {
+            HandleSwitching();
+        }
+    }
+
+    private void HandleSwitching()
+    {
+        if (Dylan.isDowned && !Darragh.isDowned)
         {
             Darragh.Activate();
             DarraghActive = true;
-            Vector3 changedPos = new Vector3(Darragh.transform.position.x, Darragh.transform.position.y + 0.8f, Darragh.transform.position.z);
+
+            Vector3 changedPos = Darragh.transform.position + new Vector3(0, 0.8f, 0);
             UIcam.transform.SetPositionAndRotation(changedPos, Darragh.transform.rotation);
             UIcam.transform.SetParent(Darragh.transform);
 
             DylanActive = false;
             Dylan.Deactivate();
-
-            
             canSwitch = false;
         }
-        else if(Darragh.isDowned && !Dylan.isDowned)
+        else if (Darragh.isDowned && !Dylan.isDowned)
         {
             Dylan.Activate();
             DylanActive = true;
-            Vector3 changedPos = new Vector3(Dylan.transform.position.x, Dylan.transform.position.y + 0.8f, Dylan.transform.position.z);
+
+            Vector3 changedPos = Dylan.transform.position + new Vector3(0, 0.8f, 0);
             UIcam.transform.SetPositionAndRotation(changedPos, Dylan.transform.rotation);
             UIcam.transform.SetParent(Dylan.transform);
 
             DarraghActive = false;
             Darragh.Deactivate();
-
             canSwitch = false;
         }
     }

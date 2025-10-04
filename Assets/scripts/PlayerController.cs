@@ -136,9 +136,9 @@ public class PlayerController : MonoBehaviour, Interactable
     // Update is called once per frame
     void Update()
     {
-        if(isDowned && manager.canSwitch == true)
+        if (isDowned)
         {
-            if(isCrouching)
+            if (isCrouching)
             {
                 transform.position += new Vector3(0, aboveGround, 0);
             }
@@ -152,6 +152,7 @@ public class PlayerController : MonoBehaviour, Interactable
             animator.SetLayerWeight(1, 1);
             return;
         }
+
         HandleInputs();
         Interact();
     }
