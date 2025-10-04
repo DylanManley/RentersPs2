@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerManager : MonoBehaviour
 {
@@ -59,8 +60,7 @@ public class PlayerManager : MonoBehaviour
 
         if (Darragh.isDowned && Dylan.isDowned)
         {
-            //gameOver
-            Debug.Log("Game Over");
+            SceneManager.LoadScene(4);
         }
         else if (Dylan.isDowned && !Darragh.isDowned)
         {
