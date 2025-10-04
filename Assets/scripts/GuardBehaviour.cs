@@ -86,11 +86,6 @@ public class GuardBehaviour : MonoBehaviour
                     animator.SetBool("punch", false);
                 }
             }
-
-            if(chaseTarget == null)
-            {
-                animator.SetBool("punch", false);
-            }
         }
 
 
@@ -102,6 +97,8 @@ public class GuardBehaviour : MonoBehaviour
     {
         isWaiting = true;
         agent.isStopped = true;
+
+        animator.SetBool("punch", false);
 
         yield return new WaitForSeconds(3f);
 
