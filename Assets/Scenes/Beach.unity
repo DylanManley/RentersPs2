@@ -11183,7 +11183,7 @@ MonoBehaviour:
   outroCutscene: {fileID: 1669833348}
   hasIntroCutscene: 1
   hasOutroCutscene: 1
-  introLength: 27
+  introLength: 32
   outroLength: 10
   spawnObjects:
   - {fileID: 122949074}
