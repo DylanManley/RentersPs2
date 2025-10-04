@@ -7,6 +7,7 @@ public class AreaDoor : MonoBehaviour, Interactable
 {
     [SerializeField] private Transform tpArea;
     private bool canInteract = true;
+    [SerializeField] private AudioSource sound;
 
     public void Interact(Transform t_interactor)
     {
@@ -15,6 +16,7 @@ public class AreaDoor : MonoBehaviour, Interactable
             canInteract = false;
             transform.Rotate(0, -10, 0);
             StartCoroutine(EnterArea(t_interactor));
+            sound.Play();
         }
     }
 

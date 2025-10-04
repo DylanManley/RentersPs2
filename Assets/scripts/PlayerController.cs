@@ -21,6 +21,7 @@ public class PlayerController : MonoBehaviour, Interactable
     [Header("Interaction Settings")]
     public float interactDistance = 3f;
   
+
     float hInput;
     float vInput;
     CharacterController controller;
@@ -31,6 +32,7 @@ public class PlayerController : MonoBehaviour, Interactable
     public Transform icon;
     private Animator animator;
 
+    [Header("State Settings")]
     Vector3 direction;
     Vector3 velocity;
     public bool isGrounded;
@@ -40,7 +42,12 @@ public class PlayerController : MonoBehaviour, Interactable
     public bool hidden = false;
 
     public bool isDowned;
-    [SerializeField] private float aboveGround = 0.5f; 
+    [SerializeField] private float aboveGround = 0.5f;
+
+    public AudioSource audioSource;
+    [SerializeField] private AudioClip[] downedClips;
+    public AudioClip[] getUpClips;
+    public AudioClip heavyClip;
 
 
     private void Start()
@@ -136,6 +143,12 @@ public class PlayerController : MonoBehaviour, Interactable
                 transform.position += new Vector3(0, aboveGround, 0);
             }
             manager.Downed();
+
+            audioSource.Stop();
+            int i = Random.Range(0, downedClips.Length);
+            audioSource.clip = downedClips[i];
+            audioSource.Play();
+
             animator.SetLayerWeight(1, 1);
             return;
         }
@@ -180,7 +193,14 @@ public class PlayerController : MonoBehaviour, Interactable
             isDowned = false;
             hidden= false;
             manager.canSwitch = true;
-            animator.SetLayerWeight(1, 0);            
+            animator.SetLayerWeight(1, 0);
+
+            //other audio
+            AudioSource otherSource = t_interactor.GetComponent<AudioSource>();
+            otherSource.Stop();
+            int i = Random.Range(0, t_interactor.GetComponent<PlayerController>().getUpClips.Length);
+            otherSource.clip = t_interactor.GetComponent<PlayerController>().getUpClips[i];
+            otherSource.Play();
         }
     }
 }

@@ -20,6 +20,9 @@ public class GuardBehaviour : MonoBehaviour
     private Transform chaseTarget;
 
     [SerializeField] private int giveUpRange = 10;
+    [SerializeField] private AudioSource audioSource; 
+    [SerializeField] private AudioClip[] alertClips;
+    [SerializeField] private AudioClip[] lostClips;
 
     void Start()
     {
@@ -63,12 +66,18 @@ public class GuardBehaviour : MonoBehaviour
                 if(agent.remainingDistance > giveUpRange)
                 {
                     isChasing = false;
+
+                    audioSource.Stop();
+                    int i = Random.Range(0, lostClips.Length);
+                    audioSource.clip = lostClips[i];
+                    audioSource.Play();
+
                     WaitAtWaypoint();
                     LookForPlayers();
-                 
+
                 }
 
-                if(agent.remainingDistance < 1.5)
+                if(agent.remainingDistance < 1.5 )
                 {
                     animator.SetBool("punch", true);
                 }
@@ -76,6 +85,11 @@ public class GuardBehaviour : MonoBehaviour
                 {
                     animator.SetBool("punch", false);
                 }
+            }
+
+            if(chaseTarget == null)
+            {
+                animator.SetBool("punch", false);
             }
         }
 
@@ -128,6 +142,12 @@ public class GuardBehaviour : MonoBehaviour
                         {
                             isChasing = true;
                             chaseTarget = player;
+
+                            audioSource.Stop();
+                            int i = Random.Range(0, alertClips.Length);
+                            audioSource.clip = alertClips[i];
+                            audioSource.Play();
+
                             break;
                         }
                     }

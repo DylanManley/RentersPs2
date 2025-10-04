@@ -19,8 +19,8 @@ public class levelItems : MonoBehaviour, Interactable
         {
             return;
         }
-           
-        if(heavyItem)
+
+        if (heavyItem)
         {
             if (controller.encumbered)
             {
@@ -34,5 +34,12 @@ public class levelItems : MonoBehaviour, Interactable
 
         exitScript.itemsCollected++;
         this.gameObject.SetActive(false);
+
+        if (heavyItem) 
+        {
+            AudioSource otherSource = t_interactor.GetComponent<AudioSource>();
+            otherSource.clip = t_interactor.GetComponent<PlayerController>().heavyClip;
+            otherSource.Play();
+        }
     }
 }

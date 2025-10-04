@@ -50,7 +50,7 @@ public class LevelManager : MonoBehaviour
             {
                 spawnObjects[i].SetActive(true);
             }
-
+            introCutscene.gameObject.SetActive(false);
             
             playerManager.enabled = true;
             charControl.enabled = true;

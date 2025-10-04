@@ -13,6 +13,10 @@ public class Door : MonoBehaviour, Interactable
     private Quaternion closedRotation;
     private Quaternion targetRotation;
 
+    [SerializeField] private AudioSource audioSource;
+    [SerializeField] private AudioClip openSound;
+    [SerializeField] private AudioClip closeSound;
+
     private void Start()
     {
         closedRotation = transform.rotation;
@@ -28,10 +32,14 @@ public class Door : MonoBehaviour, Interactable
             {
                 targetRotation = Quaternion.Euler(0, openAngle, 0) * closedRotation;
                 StartCoroutine(RotateDoor(targetRotation, true));
+                audioSource.clip = openSound;
+                audioSource.Play();
             }
             else
             {
                 StartCoroutine(RotateDoor(closedRotation, false));
+                audioSource.clip = closeSound;
+                audioSource.Play();
             }
         }
     }
