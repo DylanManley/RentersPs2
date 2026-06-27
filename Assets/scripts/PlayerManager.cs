@@ -11,7 +11,6 @@ public class PlayerManager : MonoBehaviour
 
     public PlayerController Darragh;
     bool DarraghActive = false;
-    private bool canPlay = false;
     public bool canSwitch = true;
 
 
@@ -59,7 +58,7 @@ public class PlayerManager : MonoBehaviour
     {
         if (Darragh.isDowned && Dylan.isDowned)
         {
-            SceneManager.LoadScene(3);
+            SceneManager.LoadScene(5);
             return;
         }
 

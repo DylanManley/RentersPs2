@@ -1,0 +1,216 @@
+fileFormatVersion: 2
+guid: c4fed47179dd4bf409eed5d013e9efc0
+ModelImporter:
+  serializedVersion: 21300
+  internalIDToNameTable:
+  - first:
+      74: -2603807976467630222
+    second: Box|Action
+  - first:
+      74: 8361974219644055220
+    second: Box|hingesAction
+  - first:
+      74: 7548635925884889707
+    second: Box|lidAction
+  - first:
+      74: -1974955058867333352
+    second: Box|Lock.001Action
+  - first:
+      74: -6939943502343803562
+    second: Box|LockAction
+  - first:
+      74: -8522627906073757274
+    second: Lock|Action
+  - first:
+      74: 3582449829557407658
+    second: Lock|hingesAction
+  - first:
+      74: -6659188991451697376
+    second: Lock|lidAction
+  - first:
+      74: 6715306357744195791
+    second: Lock|Lock.001Action
+  - first:
+      74: -8792390759076284241
+    second: Lock|LockAction
+  - first:
+      74: -3742119745728631196
+    second: Lock.001|Action
+  - first:
+      74: -6233357180718779297
+    second: Lock.001|hingesAction
+  - first:
+      74: 7496990592082337613
+    second: Lock.001|lidAction
+  - first:
+      74: 6169981296224775603
+    second: Lock.001|Lock.001Action
+  - first:
+      74: 4078666831272613375
+    second: Lock.001|LockAction
+  - first:
+      74: -297573791305705473
+    second: LockBox|Action
+  - first:
+      74: -8232152132351770369
+    second: LockBox|hingesAction
+  - first:
+      74: 8916249604584051400
+    second: LockBox|lidAction
+  - first:
+      74: -6503105994474643149
+    second: LockBox|Lock.001Action
+  - first:
+      74: 7734233842596749011
+    second: LockBox|LockAction
+  - first:
+      74: 8631315566834843927
+    second: lid|Action
+  - first:
+      74: -3404152177977029582
+    second: lid|hingesAction
+  - first:
+      74: 6551349886069634037
+    second: lid|lidAction
+  - first:
+      74: 7866611843312698120
+    second: lid|Lock.001Action
+  - first:
+      74: -6104647273011735870
+    second: lid|LockAction
+  - first:
+      74: -7312406241121354415
+    second: Box|Action (1)
+  - first:
+      74: 3732452638127104967
+    second: Box|Action (2)
+  externalObjects: {}
+  materials:
+    materialImportMode: 2
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    removeConstantScaleCurves: 1
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 1
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Box|Action
+      takeName: Box|Action
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 45
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 0
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    nodeNameCollisionStrategy: 1
+    fileIdsGeneration: 2
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    keepQuads: 0
+    weldVertices: 1
+    bakeAxisConversion: 0
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    optimizeBones: 1
+    meshOptimizationFlags: -1
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 1
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
+  importAnimation: 1
+  humanDescription:
+    serializedVersion: 3
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    globalScale: 1
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
+  animationType: 2
+  humanoidOversampling: 1
+  avatarSetup: 0
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 1
+  remapMaterialsIfMaterialImportModeIsNone: 0
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

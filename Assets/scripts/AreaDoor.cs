@@ -8,13 +8,14 @@ public class AreaDoor : MonoBehaviour, Interactable
     [SerializeField] private Transform tpArea;
     private bool canInteract = true;
     [SerializeField] private AudioSource sound;
-
+    [SerializeField] private bool locked = false;
+    [SerializeField] private GameObject doorKey;
     public void Interact(Transform t_interactor)
     {
-        if (canInteract)
+        if (canInteract && !locked)
         {
             canInteract = false;
-            transform.Rotate(0, -10, 0);
+            transform.Rotate(0, -10, 0, Space.World);
             StartCoroutine(EnterArea(t_interactor));
             sound.Play();
         }
@@ -39,7 +40,15 @@ public class AreaDoor : MonoBehaviour, Interactable
         }
 
         yield return new WaitForSeconds(0.3f);
-        transform.Rotate(0, 10, 0);
+        transform.Rotate(0, 10, 0, Space.World);
         canInteract = true;
+    }
+
+    void Update()
+    {
+        if (doorKey.activeInHierarchy == false)
+        {
+            locked = false;
+        }
     }
 }

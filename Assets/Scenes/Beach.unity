@@ -11415,19 +11415,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37e361a4a3a254a4d8a5966bbd7a1f83, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  introCutscene: {fileID: 1601815545}
-  outroCutscene: {fileID: 1669833348}
-  hasIntroCutscene: 1
-  hasOutroCutscene: 1
-  introLength: 33
-  outroLength: 16
   spawnObjects:
   - {fileID: 122949074}
   - {fileID: 1263429175}
   controller: {fileID: 1613631429}
   charControl: {fileID: 1613631432}
   playerManager: {fileID: 1915121072}
-  nextSceneNum: 2
+  nextScene: Farm
+  outroCutscene: BeachOutro
 --- !u!4 &867657889
 Transform:
   m_ObjectHideFlags: 0
@@ -12252,9 +12247,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   openAngle: 90
   openSpeed: 90
+  locked: 0
   audioSource: {fileID: 910193393}
   openSound: {fileID: 8300000, guid: 58043fea6e52be446921d9c378ed0495, type: 3}
   closeSound: {fileID: 8300000, guid: 68e7b7396ad1dbb4b922486277ed37e6, type: 3}
+  doorKey: {fileID: 0}
 --- !u!65 &910193389
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -12789,6 +12786,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tpArea: {fileID: 1257459140}
   sound: {fileID: 935234491}
+  locked: 0
+  doorKey: {fileID: 0}
 --- !u!65 &935234487
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -15432,9 +15431,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   openAngle: -90
   openSpeed: 90
+  locked: 0
   audioSource: {fileID: 1178064949}
   openSound: {fileID: 8300000, guid: 58043fea6e52be446921d9c378ed0495, type: 3}
   closeSound: {fileID: 8300000, guid: 68e7b7396ad1dbb4b922486277ed37e6, type: 3}
+  doorKey: {fileID: 0}
 --- !u!65 &1178064945
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -19426,6 +19427,10 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6248031742930694882, guid: 711442ced801bc846aaeb04a28449fbd, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 711442ced801bc846aaeb04a28449fbd, type: 3}
 --- !u!1 &1432123212
@@ -21796,6 +21801,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tpArea: {fileID: 860155606}
   sound: {fileID: 1593138634}
+  locked: 0
+  doorKey: {fileID: 0}
 --- !u!4 &1593138631 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -1950733119399844177, guid: 500f9e2dfbea83246b96d3ca2f5a5b83, type: 3}
@@ -22231,11 +22238,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1601796156}
   m_Mesh: {fileID: -8223828571603864074, guid: ae6fac91f8b4e424f85730f30aa76c7c, type: 3}
---- !u!224 &1601815545 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 1601815545, guid: 711442ced801bc846aaeb04a28449fbd, type: 3}
-  m_PrefabInstance: {fileID: 1423728853}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1609895188
 GameObject:
   m_ObjectHideFlags: 0
@@ -23751,7 +23753,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 753101929}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}

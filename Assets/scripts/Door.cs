@@ -9,6 +9,7 @@ public class Door : MonoBehaviour, Interactable
 
     private bool canInteract = true;
     private bool open = false;
+    [SerializeField] private bool locked = false;
 
     private Quaternion closedRotation;
     private Quaternion targetRotation;
@@ -16,15 +17,24 @@ public class Door : MonoBehaviour, Interactable
     [SerializeField] private AudioSource audioSource;
     [SerializeField] private AudioClip openSound;
     [SerializeField] private AudioClip closeSound;
+    [SerializeField] private GameObject doorKey;
 
     private void Start()
     {
         closedRotation = transform.rotation;
     }
 
+    void Update()
+    {
+        if (doorKey.activeInHierarchy == false)
+        {
+            locked = false;
+        }
+    }
+
     public void Interact(Transform t_interactor)
     {
-        if (canInteract)
+        if (canInteract && !locked)
         {
             canInteract = false;
 

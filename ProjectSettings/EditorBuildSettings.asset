@@ -8,7 +8,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Menu.unity
     guid: 5af61e9c48578f2418860d9e9632e965
-  - enabled: 0
+  - enabled: 1
+    path: Assets/Scenes/cutsceneScene.unity
+    guid: d36279b21a57c2442bbb556aa5baf5fc
+  - enabled: 1
     path: Assets/Scenes/Farm.unity
     guid: fdc979619c3d0f24897d4596a5461e49
   - enabled: 1
