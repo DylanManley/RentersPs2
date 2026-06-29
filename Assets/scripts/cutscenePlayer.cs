@@ -25,6 +25,9 @@ public class cutscenePlayer : MonoBehaviour
             CutsceneEnd(player);
         }
 
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+
         player.clip = cutscene;
         player.loopPointReached += CutsceneEnd;
         player.Play();

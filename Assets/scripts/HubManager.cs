@@ -8,6 +8,7 @@ public class HubManager : MonoBehaviour, Interactable
     [SerializeField] private GameObject[] HubItems;
     [SerializeField] private int[] unlockLevel;
     [SerializeField] private GameObject HubUI;
+    private bool inUI = false;
 
      void Start()
     {
@@ -22,11 +23,26 @@ public class HubManager : MonoBehaviour, Interactable
         
     }
 
+    void Update()
+    {
+        if (inUI)
+        {
+            if (Input.GetKeyDown(KeyCode.Escape))
+            {
+                Cursor.lockState = CursorLockMode.Locked;
+                Cursor.visible = false;
+                HubUI.SetActive(false);
+                inUI = false;
+            }
+        }
+    }
+
     public void Interact(Transform t_interactor)
     {
         HubUI.SetActive(true);
         Cursor.lockState = CursorLockMode.Confined;
         Cursor.visible = true;
+        inUI = true;
     }
 
 
