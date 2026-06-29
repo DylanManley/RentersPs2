@@ -36,7 +36,7 @@ public class LevelManager : MonoBehaviour
     {
         CutsceneRouter.VideoPath = "CutScenes/" + outroCutscene;
         CutsceneRouter.NextSceneName = "Scenes/" + nextScene;
+        HubVersion.levelsFinished++;
         SceneManager.LoadScene("CutsceneScene");
-
     }
 }

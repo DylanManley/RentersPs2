@@ -60221,7 +60221,7 @@ MonoBehaviour:
   controller: {fileID: 369294755}
   charControl: {fileID: 369294752}
   playerManager: {fileID: 324929280}
-  nextScene: Beach
+  nextScene: House
   outroCutscene: BeachCutscene
 --- !u!65 &1811978545
 BoxCollider:

@@ -13,9 +13,7 @@ public class MenuScript : MonoBehaviour
 
     public void StartDemo()
     {
-        CutsceneRouter.VideoPath = "CutScenes/FarmIntro";
-        CutsceneRouter.NextSceneName = "Scenes/Farm";
-        SceneManager.LoadScene("CutsceneScene");
+        SceneManager.LoadScene("House");
     }
 
     public void Quit()

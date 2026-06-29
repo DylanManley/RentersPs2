@@ -1479,12 +1479,32 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8023740236570916564, guid: 51c2e45481b9e964a80517c371abd181, type: 3}
+      propertyPath: field of view
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 8023740236570916564, guid: 51c2e45481b9e964a80517c371abd181, type: 3}
       propertyPath: near clip plane
       value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 8023740236570916564, guid: 51c2e45481b9e964a80517c371abd181, type: 3}
       propertyPath: m_CullingMask.m_Bits
       value: 95
+      objectReference: {fileID: 0}
+    - target: {fileID: 8023740236570916564, guid: 51c2e45481b9e964a80517c371abd181, type: 3}
+      propertyPath: m_projectionMatrixMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8023740236570916564, guid: 51c2e45481b9e964a80517c371abd181, type: 3}
+      propertyPath: m_AllowDynamicResolution
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8023740236570916564, guid: 51c2e45481b9e964a80517c371abd181, type: 3}
+      propertyPath: m_NormalizedViewPortRect.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8023740236570916564, guid: 51c2e45481b9e964a80517c371abd181, type: 3}
+      propertyPath: m_NormalizedViewPortRect.y
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8023740236570916565, guid: 51c2e45481b9e964a80517c371abd181, type: 3}
       propertyPath: sensitivity
